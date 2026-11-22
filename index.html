@@ -3,23 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="only light">
-<meta name="supported-color-schemes" content="light">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
 <title>Chandrika &amp; Aadi – Wedding Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Rozha+One&family=Noto+Serif+Telugu:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  color-scheme:only light;
+  color-scheme:light dark;
   --sindoor:#a3152a; --maroon:#5a0f1e; --maroon-deep:#400a15;
   --haldi:#f2b01e; --gold:#d79a1b; --ivory:#fff6e3; --sand:#f6e6c4; --ink:#3a1a16;
   --serif:"Cormorant Garamond",Georgia,serif;
   --display:"Rozha One","Cormorant Garamond",Georgia,serif;
   --deva:"Noto Serif Telugu","Gautami",serif;
 }
+/* Dark-mode phones: this invitation keeps its own palette. Declaring dark support (with identical colors)
+   stops browsers from force-darkening and recoloring the page. */
+@media (prefers-color-scheme:dark){
+  :root{--sindoor:#a3152a;--maroon:#5a0f1e;--maroon-deep:#400a15;--haldi:#f2b01e;--gold:#d79a1b;--ivory:#fff6e3;--sand:#f6e6c4;--ink:#3a1a16}
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:var(--ivory)}
 body{background:var(--ivory);color:var(--ink);font-family:var(--serif);font-size:1.2rem;line-height:1.6;overflow-x:hidden}
 body.locked{overflow:hidden;height:100vh}
 a{color:inherit}
